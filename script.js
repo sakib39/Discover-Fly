@@ -1,10 +1,10 @@
 function selectSeating(seating , isIncrease){
     var seatingInput = parseInt(document.getElementById(seating+'-input').value);
     let seatingCount = seatingInput;
-    if(isIncrease == true){
+    if(isIncrease == true){                     //plus button functions
         seatingCount = seatingInput+1;
     }
-    else if(isIncrease == false && seatingInput > 0){
+    else if(isIncrease == false && seatingInput > 0){       //minus button functions and to check the counts do not become less than 0
         seatingCount = seatingInput-1;
     }
     document.getElementById(seating+'-input').value = seatingCount;
@@ -38,7 +38,7 @@ document.getElementById('book-btn').addEventListener('click',function(){
     }
 })
 
-function calculateTotal(){
+function calculateTotal(){                 //calculate all the total,vat,subtotal
     const firstCount = getInputValue('first');
     const economyCount = getInputValue('economy');
 
@@ -52,7 +52,7 @@ function calculateTotal(){
     document.getElementById('total').innerText = '$'+total;
 }
 
-function getInputValue(seat){
+function getInputValue(seat){               //functions to know the input values of seatings
     const seatInput = document.getElementById(seat+'-input');
     const seatCount = parseInt(seatInput.value);
     return seatCount;
