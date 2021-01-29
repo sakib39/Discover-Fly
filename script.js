@@ -16,7 +16,26 @@ document.getElementById('book-btn').addEventListener('click',function(){
     const firstCount = getInputValue('first');
     const economyCount = getInputValue('economy');
 
-    alert('You have booked '+firstCount+' first class and ' +economyCount+ ' economy class tickets');
+    if(firstCount == 0 && economyCount == 0){
+        alert('You did not book any ticket. try again!!!!');
+    }
+    if(economyCount == 0){
+        if(firstCount == 1){
+            alert('You have booked '+firstCount+' first class ticket');
+        }
+        else if(firstCount > 1){
+            alert('You have booked '+firstCount+' first class tickets'); 
+        }
+    }else if(firstCount == 0){
+        if(economyCount == 1){
+            alert('You have booked '+economyCount+' economy class ticket');
+        }
+        else if(economyCount > 1){
+            alert('You have booked '+economyCount+' economy class tickets'); 
+        }
+    }else{
+        alert('You have booked '+firstCount+' first class and ' +economyCount+ ' economy class tickets');
+    }
 })
 
 function calculateTotal(){
